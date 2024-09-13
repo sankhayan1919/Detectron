@@ -1,0 +1,1057 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="./output.css" rel="stylesheet">
+  <link href="http://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+.full-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0c0032, #a480e7 ); /* Gradient background */
+            background-size: cover;
+            background-position: center;
+            z-index: -1; /* Ensures the background is behind all content */
+        }
+
+/* Custom hover effect for nav items */
+.nav-item {
+            transition: transform 0.3s ease, background-color 0.3s ease, font-size 0.3s ease;
+        }
+    .nav-item:hover {
+        transform: scale(1.1); /* Enlarges the item */
+        background: linear-gradient(90deg, #0ea5ea, #0bd1d1 36%, #0eeab3); /* More vibrant background color on hover */
+            color: black;
+            font-weight:500;
+            border-radius: 8px; /* Rounded corners */
+            font-size: 1.2rem; /* Enlarges the font size on hover (18px) */
+    }
+        /* Custom hover effect for buttons */
+        .btn-item {
+            transition: transform 0.3s ease, background-color 0.3s ease, font-size 0.3s ease;
+        }
+        .btn-item:hover {
+            transform: scale(1.1); /* Enlarges the button */
+             /* Light background color on hover */
+            font-size: 0.875rem; /* Enlarges the font size on hover (18px) */
+        }
+
+        /* Navbar background color with black and increased transparency */
+        .navbar-background {
+            background-color: transparent; /* Black color with 60% opacity */
+        }
+
+        /* Search bar styling */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.2); /* Light background for the search bar */
+            border-radius: 8px;
+            padding: 0.25rem; /* Adjust padding to control the height */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+            width: 250px; /* Adjust the width as needed */
+        }
+        .search-bar input {
+            border: none;
+            outline: none;
+            padding: 0.5rem;
+            background: transparent;
+            width: 100%;
+            font-size: 0.875rem; /* Adjust font size for the placeholder */
+            height: 2rem; /* Adjust height of the input */
+        }
+        .search-bar svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 0.5rem;
+            fill: white; /* Set icon color */
+            border-color: black;
+        }
+
+
+        .try-now {
+    padding: 10px 20px;
+    background-color: #1c64f2;
+    border-radius: 5px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.try-now:hover {
+    background-color: #144bbf;
+}
+
+/* INTRODUCTION PART CSS */
+.hero-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 50px;
+}
+
+.content {
+    flex: 1;
+    max-width: 600px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 65px;
+    margin: 0;
+    line-height: 1;
+}
+
+.paragraphs p {
+    font-size: 18px;
+    color: white;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0.8;
+}
+
+.paragraphs p:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    color: #10da5d;
+}
+
+.paragraph1 {
+    margin: 20px 0;
+    padding-top: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: white;
+}
+
+.paragraph2 {
+    margin: 20px 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.subscribe-container {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+
+input[type="email"] {
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    width: 250px;
+    margin-right: 10px;
+    background-color: #ffffff;
+    color: black;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #ffc107; /* Yellow color */
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #e0a800;
+}
+
+.hero-image {
+    position: relative;
+    margin-right: 70px;
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 600px;
+    border-radius: 20px;
+}
+
+/* Responsive CSS */
+
+/* For tablets and smaller devices */
+@media (max-width: 1024px) {
+    .hero-section {
+        flex-direction: column;
+        padding: 50px 20px;
+        margin-top: 50px;
+    }
+
+    .content {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .paragraphs p {
+        font-size: 16px;
+    }
+
+    .subscribe-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    input[type="email"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .cta-button {
+        width: 100%;
+    }
+
+    .hero-image {
+        margin: 20px 0;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 30px 15px;
+        margin-top: 30px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .paragraphs p {
+        font-size: 14px;
+    }
+
+    .cta-button {
+        font-size: 14px;
+    }
+}
+
+/* For very small mobile screens */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .paragraphs p {
+        font-size: 12px;
+    }
+
+    input[type="email"] {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .cta-button {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+     /* Sidebar Styles */
+     .sidebar-bg {
+            background-color: rgba(0, 0, 0, 0.4); /* Deep black with 40% opacity */
+        }
+        .image-opacity {
+            opacity: 0.9; /* 90% opacity */
+        }
+
+        /* Sidebar item hover effect */
+        .sidebar-item {
+            transition: background-color 0.3s ease, border-radius 0.3s ease; /* Smooth transition */
+        }
+        .sidebar-item:hover {
+            background-color: rgba(200, 150, 0.3, 0.5); /* Custom background color on hover */
+            border-radius: 8px; /* Rounded corners */
+            font-size: 1.1rem; /* Enlarged font size on hover */
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.9);
+            min-width: 220px; /* Increased width for additional items */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 0.875rem;
+        }
+        .dropdown-content a:hover {
+            background-color: rgba(200, 150, 0.3, 0.5); /* Custom background color on hover */
+            border-radius: 8px; /* Rounded corners */
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .demo{
+          background: linear-gradient(90deg, #0ea5ea, #0bd1d1 51%, #0ea5ea);
+        }
+
+/* VIDEO PART CSS */
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    border: 4px solid #4c51bf; /* Indigo Border */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    background-color: #000;
+}
+
+.video-player {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* OPTIONS PART CSS */
+.categories-section {
+    text-align: center;
+    padding: 50px;
+}
+
+.categories-header {
+    font-family: Arial, sans-serif;
+    margin-bottom: 40px;
+}
+
+.sub-header {
+    font-size: 18px;
+    color: #5ddee7;
+    font-weight: 500;
+}
+
+.main-header {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fa9b0c;
+}
+
+.highlight {
+    color: #FF6F61;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ensures 3 columns per row */
+    gap: 20px;
+    padding: 0 100px;
+}
+
+.category-card {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.category-card img {
+    width: 400px;
+    height: 200px;
+    margin-bottom: 15px;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.category-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: whitesmoke;
+    margin-bottom: 5px;
+}
+
+.category-info {
+    font-size: 14px;
+    color: #0ad4f7;
+}
+
+/* Responsive CSS */
+
+/* Tablets and smaller screens */
+@media (max-width: 1024px) {
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+        padding: 0 50px;
+    }
+
+    .category-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .main-header {
+        font-size: 32px;
+    }
+
+    .sub-header {
+        font-size: 16px;
+    }
+
+    .category-title {
+        font-size: 18px;
+    }
+
+    .category-info {
+        font-size: 13px;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+    .categories-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+        padding: 0 20px;
+    }
+
+    .categories-section {
+        padding: 30px;
+    }
+
+    .main-header {
+        font-size: 28px;
+    }
+
+    .sub-header {
+        font-size: 15px;
+    }
+
+    .category-card {
+        padding: 15px;
+    }
+
+    .category-title {
+        font-size: 16px;
+    }
+
+    .category-info {
+        font-size: 12px;
+    }
+}
+
+/* Very small mobile screens */
+@media (max-width: 480px) {
+    .main-header {
+        font-size: 24px;
+    }
+
+    .sub-header {
+        font-size: 14px;
+    }
+
+    .category-title {
+        font-size: 14px;
+    }
+
+    .category-info {
+        font-size: 11px;
+    }
+
+    .category-card {
+        padding: 10px;
+    }
+
+    .categories-grid {
+        gap: 15px;
+    }
+}
+
+/* APP PART CSS */
+.app-promo {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #262626;
+    padding: 40px;
+    border-radius: 15px;
+    color: white;
+    max-width: 1000px;
+    margin: 100px 160px;
+}
+
+.promo-content {
+    max-width: 50%;
+}
+
+.promo-content h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.promo-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #b3b3b3;
+}
+
+.store-buttons a {
+    display: inline-flex;
+    margin-right: 20px;
+}
+
+.store-buttons img {
+    width: 150px;
+    height: auto;
+    border-radius: 2px;
+}
+
+.promo-image img {
+    max-width: 70%;
+    max-height: 70%;
+    border-radius: 15px;
+    margin-left: 80px;
+}
+
+        footer {
+    background-color: #2a2a2a;
+    color: #fff;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-logo {
+    flex: 1;
+    margin-right: 50px;
+}
+
+.footer-logo h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.footer-logo p {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.footer-links {
+    flex: 1;
+}
+
+.footer-links h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-contact {
+    flex: 1;
+    margin-right: 50px;
+}
+
+.footer-contact h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-contact p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+}
+
+.footer-newsletter {
+    flex: 1;
+}
+
+.footer-newsletter h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer-newsletter input[type="email"] {
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 3px;
+}
+
+.footer-newsletter button {
+    padding: 10px 20px;
+    background-color: #f58220;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.bg-custom-dark {
+    background-color: #2a2a2a;
+}
+
+.footer-bottom {
+    background-color: #1a1a1a;
+    text-align: center;
+}
+
+.social-icons {
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #aaa;
+}
+
+
+        /* Custom Media Query for 787px */
+        @media (max-width: 787px) {
+            .navbar {
+                display: none;
+            }
+            .sidebar {
+                display: block;
+            }
+        }
+        
+        @media (min-width: 788px) {
+            .navbar {
+                display: block;
+            }
+            .sidebar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+     <!-- Full-background image -->
+     <div class="full-background"></div>
+
+     <!-- Sidebar -->
+     <div class="w-64 h-screen sidebar-bg text-white fixed top-0 left-0 sidebar hidden overflow-y-auto">
+        <!-- Sidebar Header with Images -->
+        <div class="flex items-center justify-center h-16 p-2">
+            <div class="flex items-center space-x-2">
+                <img src="https://i.postimg.cc/fR0ZBhtN/IMG-20240826-165836.jpg" alt="Logo" class="h-10 image-opacity">
+                <img src="https://i.postimg.cc/QCf7GYps/logo-4k.png" alt="Detectron" class="w-28 h-28 md:w-40 md:h-38 lg:w-48 lg:h-12 image-opacity">
+            </div>
+        </div>
+        <nav class="mt-6">
+            <ul>
+                <li class="sidebar-item flex items-center px-4 py-4 my-2 cursor-pointer ">
+                    <i class="fas fa-home mr-3"></i>
+                    <span>Download</span>
+                </li>
+                <li class="sidebar-item flex items-center px-4 py-4 my-2 cursor-pointer ">
+                    <i class="fas fa-box mr-3"></i>
+                    <span>Product</span>
+                </li>
+                <li class="sidebar-item flex items-center px-4 py-4 my-2 cursor-pointer ">
+                    <i class="fas fa-sign-in-alt mr-3"></i>
+                    <span>Login</span>
+                </li>
+                <li class="sidebar-item flex items-center px-4 py-4 my-2 cursor-pointer ">
+                    <!-- Updated Support Icon -->
+                    <i class="fas fa-headset mr-3"></i>
+                    <span>Support</span>
+                </li>
+                <li class="sidebar-item flex items-center px-4 py-4 my-2 cursor-pointer ">
+                    <i class="fas fa-envelope mr-3"></i>
+                    <span>Contact Us</span>
+                </li>
+                <!-- Search Item -->
+                <li class="sidebar-item flex items-center px-3 py-1 cursor-pointer mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a7 7 0 100 14 7 7 0 000-14zM21 21l-4.35-4.35" />
+                    </svg>
+                    <span>Search</span>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+     <!-- Main content -->
+    <main class="navbar">
+        <!-- Navbar -->
+        <nav class="navbar-background p-1 w-full top-0 left-0 z-10 navbar">
+            <div class="container mx-auto flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <!-- Logo and Detectron image container -->
+                    <a href="http://127.0.0.1:5500/main.html" class="flex items-center space-x-4">
+                        <img src="https://i.postimg.cc/fR0ZBhtN/IMG-20240826-165836.jpg" alt="Logo" class="h-12">
+                        <img src="https://i.postimg.cc/QCf7GYps/logo-4k.png" alt="Detectron" class="w-32 h-32 md:w-48 md:h-48 lg:w-64 lg:h-20"> <!-- Increased size -->
+                    </a>
+                </div>
+                <ul class="flex space-x-4 items-center">
+                    <li><a href="http://127.0.0.1:5500/src/download.html" class="text-red-400 px-4 py-2 nav-item rounded-md text-lg">Download</a></li>
+                    <li class="dropdown flex gap-3">
+                        <a href="#" class="text-red-400 px-4 py-2 nav-item rounded-md text-lg">Products</a>
+                        <div class="dropdown-content ">
+                            <div class="dropdown-section flex flex-col">
+                                <h3 class="text-white font-semibold px-4 py-2">Items</h3>
+                                <a href="#">Item 1</a>
+                                <a href="#">Item 2</a>
+                                <a href="#">Item 3</a>
+                                <a href="#">Item 4</a>
+                            </div>
+                            <div class="dropdown-section flex flex-col">
+                                <h3 class="text-white font-semibold px-4 py-2">Components</h3>
+                                <a href="#">Component A</a>
+                                <a href="#">Component B</a>
+                                <a href="#">Component C</a>
+                                <a href="#">Component D</a>
+                            </div>
+                            <div class="dropdown-section flex flex-col ">
+                                <h3 class="text-white font-semibold px-4 py-2">Products</h3>
+                                <a href="#">Product X</a>
+                                <a href="#">Product Y</a>
+                                <a href="#">Product Z</a>s
+                                <a href="#">Product W</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="http://127.0.0.1:5500/src/login.html" class="text-red-400 px-3 py-2 nav-item rounded-md text-lg">Login</a></li>
+                    <li><a href="http://127.0.0.1:5500/src/support.html" class="text-red-400 px-4 py-2 nav-item rounded-md text-lg">Support</a></li>
+                    <li><a href="http://127.0.0.1:5500/src/contact.html" class="text-red-400 px-3 py-2 nav-item rounded-md text-lg">Contact us</a></li>
+                    <li>
+                        <div class="search-bar">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon">
+                              <circle cx="11" cy="11" r="6" />
+                              <line x1="16.5" y1="16.5" x2="21" y2="21" />
+                            </svg>
+                            <input type="text" placeholder="Search Forensic Data" aria-label="Search">
+                        </div>
+                    </li>
+                    <li>
+                      <a href="http://127.0.0.1:5500/src/demo.html" class="inline-block">
+                        <button class="demo text-black font-bold py-2 px-4 rounded-md  hover:shadow-lg transition-all btn-item text-sm">Demo Video</button>
+                    </a>
+                    
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </main>
+    
+    <!--INTRODUCTION PART HTML-->
+    <div class="hero-section">
+        <div class="content">
+            <h1>Evidence At Fingertips</h1>
+            <div class="contain">
+                <div class="paragraphs">
+                    <p class="paragraph1" id="paragraph1">Enhances your cyber defences proactively and minimize the impact of incidents</p>
+                    <p class="paragraph2" id="paragraph2">Address the shortage of security skills with readily available expert support</p>
+                </div>
+            </div>
+            <div class="subscribe-container">
+                <input type="email" placeholder="Enter Your Email">
+                <button class="cta-button">Let's Inspect</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://i.postimg.cc/251nwG22/file.png" alt="Person with Megaphone">
+        </div>
+    </div>
+
+    <!--VIDEO PART HTML AND TAILWIND CSS-->
+    <!-- <div class="flex-container">
+        <div class="video-wrapper">
+            <video class="video-player" controls>
+                <source src="main without water mark (speed 1.3 ) (1).mp4" type="video/mp4">
+                <source src="path-to-your-video.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div> -->
+
+    <!-- Add more sections here if needed -->
+
+    <!--OPTIONS PART HTML-->
+    <div class="categories-section">
+        <p class="categories-header">
+            <span class="sub-header">Investigation Categories</span>
+            <br />
+            <span class="main-header">Inspect & Assemble <span class="highlight">Main Categories</span></span>
+        </p>
+        <div class="categories-grid">
+            <div class="category-card">
+                <img src="https://i.postimg.cc/RFnWDzXh/image-2-1.jpg" alt="Facebook">
+                <p class="category-title">FACEBOOK</p>
+                <p class="category-info">LET'S INSPECT</p>
+            </div>
+            <div class="category-card">
+                <img src="https://i.postimg.cc/MZNZXfXm/image-consistin-89107912-7f03-49e8-b46d-c3e28a56c684.png" alt="Twitter">
+                <p class="category-title">TWITTER</p>
+                <p class="category-info">LET'S INSPECT</p>
+            </div>
+            <div class="category-card">
+                <img src="https://i.postimg.cc/50C24Sc2/fotor-ai-202409041728-1-1.jpg" alt="Instagram">
+                <p class="category-title">INSTAGRAM</p>
+                <p class="category-info">LET'S INSPECT</p>
+            </div>
+            <div class="category-card">
+                <img src="https://i.postimg.cc/V6QdbVWC/telegram-app-decentralizzata-1.webp" alt="Telegarm">
+                <p class="category-title">TELEGRAM</p>
+                <p class="category-info">LET'S INSPECT</p>
+            </div>
+            <div class="category-card">
+                <img src="https://i.postimg.cc/tRfC1fRC/Cyber-News-Rundown-Spy-App-800x400-1.png" alt="WhatsApp">
+                <p class="category-title">WHATSAPP</p>
+                <p class="category-info">LET'S INSPECT</p>
+            </div>
+            <div class="category-card">
+                <img src="https://i.postimg.cc/gJ49VwPP/vector-style-graphic-that-illustrates-260nw-2449640427-1.webp" alt="Google">
+                <p class="category-title">GOOGLE</p>
+                <p class="category-info">LET'S INSPECT</p>
+            </div>
+        </div>
+    </div> 
+
+    <!--BOX PART HTML AND TAILWIND CSS-->
+    <div class="text-center py-10">
+        <h1 class="text-4xl font-bold">Dependable Cyber Investigation Platform</h1>
+        <p class="text-gray-400 mt-4">A dependable cyber investigation platform ensures efficient threat detection, data protection,<br> and in-depth analysis for cybersecurity incidents</p>
+    </div>
+    
+    <div class="flex flex-wrap justify-center space-y-6 md:space-x-6 md:space-y-0">
+        <!-- Card 1 -->
+        <div class="bg-gray-800 rounded-lg shadow-lg p-6 w-full md:w-80 min-h-[400px] flex flex-col">
+            <h2 class="text-xl font-semibold px-6 mb-8">SMART COLLECTION</h2>
+            <p class="text-yellow-500 px-5 flex-grow">Capture and save social media and website content directly from your browser with Detectron. This browser plugin allows you to quickly gather online evidence and store it on your local hard drive.</p>
+            <a href="#" class="text-indigo-500 inline-flex items-center mt-2 ml-5">
+                Explore More
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-4 w-4 ml-2">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+    
+        <!-- Card 2 -->
+        <div class="bg-gray-800 rounded-lg shadow-lg p-6 w-full md:w-80 min-h-[400px] flex flex-col">
+            <h2 class="text-xl font-semibold px-6 mb-8">SECURED EVIDENCE</h2>
+            <p class="text-red-400 mt-2 px-5 flex-grow">Detectron produces court-admissible digital evidence with 256-bit signatures and timestamps, meeting Federal Rules of Evidence standards and eSign Act compliance by using a certified Stratum-1 atomic clock for authentication.</p>
+            <a href="#" class="text-indigo-500 inline-flex items-center mt-5 ml-5">
+                Explore More
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-4 w-4 ml-2">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+    
+        <!-- Card 3 -->
+        <div class="bg-gray-800 rounded-lg shadow-lg p-6 w-full md:w-80 min-h-[400px] flex flex-col">
+            <h2 class="text-xl font-semibold px-4 mb-8">BROAD INVESTIGATION</h2>
+            <p class="text-indigo-300 mt-2 px-5 flex-grow">With Detectron's fast, automated evidence capture, you can significantly broaden your online investigations. Easily capture a complete social media account or timeline, then search the saved OCR PDF or MHTML file for relevant information.</p>
+            <a href="#" class="text-indigo-500 inline-flex items-center mt-5 ml-5">
+                Explore More
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-4 w-4 ml-2">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+    
+    <!--AI PART HTML-->
+    <div class="app-promo">
+        <div class="promo-content">
+            <h2>AVAILABILITY OF AI AUTOMATION</h2>
+            <p>AI is increasingly available for investigations, enhancing data analysis, pattern recognition, and decision-making in fields such as law enforcement, cybersecurity, and legal research</p>
+            <div class="store-buttons">
+                <div class="subscribe-container">
+                    <input type="email" placeholder="Enter Your Email">
+                    <button class="cta-button">Let's Inspect</button>
+                </div>
+            </div>
+        </div>
+        <div class="promo-image">
+            <img src="https://i.postimg.cc/8C7SXcGT/100010231.webp" alt="Mobile Phones">
+        </div>
+    </div>
+
+    <!--APPLICATIONS PART IN HTML AND TAILWIND CSS-->
+    <div class="flex flex-col space-y-5 mt-5 mx-4 md:mx-36 mb-10">
+        <!-- First Div -->
+        <div class="flex flex-col md:flex-row p-4 shadow-lg space-y-4 md:space-y-0 md:space-x-4 items-center justify-between">
+            <a href="https://example.com" class="w-full md:w-1/2">
+                <img src="https://i.postimg.cc/PrCfMFdb/Leonardo-Phoenix-A-futuristic-social-media-investigation-tool-3.jpg" alt="Example Image 1" class="w-full h-auto rounded-3xl">
+            </a>
+            <p class="text-2xl md:text-4xl font-bold text-center bg-black opacity-55 text-yellow-100 mt-4 md:mt-0 md:w-1/2">
+                Recognizes influential figures and essential contributors
+            </p>
+        </div>
+    
+        <!-- Second Div -->
+        <div class="flex flex-col md:flex-row p-4 shadow-lg space-y-4 md:space-y-0 md:space-x-4 items-center justify-between rounded">
+            <p class="text-2xl md:text-4xl bg-black opacity-55 text-yellow-100 font-bold text-center md:w-1/2">
+                Identifies and examines irregularities
+            </p>
+            <a href="https://example.com" class="w-full md:w-1/2">
+                <img src="https://i.postimg.cc/2yBycHnK/Leonardo-Phoenix-A-futuristic-social-media-investigation-tool-3-2.jpg" alt="Example Image 2" class="w-full h-auto rounded-3xl">
+            </a>
+        </div>
+    
+        <!-- Third Div -->
+        <div class="flex flex-col md:flex-row p-4 shadow-lg space-y-4 md:space-y-0 md:space-x-4 items-center justify-between rounded">
+            <a href="https://example.com" class="w-full md:w-1/2">
+                <img src="https://i.postimg.cc/QtBSmTdd/Leonardo-Phoenix-A-futuristic-social-media-investigation-tool-1-2.jpg" alt="Example Image 3" class="w-full h-auto rounded-3xl">
+            </a>
+            <p class="text-2xl md:text-4xl bg-black opacity-55 text-yellow-100 font-bold text-center md:w-1/2 mt-4 md:mt-0">
+                Improves the depth of competitive assessments
+            </p>
+        </div>
+    </div>
+
+    <!--APP PART HTML-->
+    <div class="app-promo">
+        <div class="promo-content">
+            <h2>Also Available on IOS & Android</h2>
+            <p>This site is now available in our newly launched app version in the play store and apple store. So, <span style="color: #0eeab3;">DOWNLOAD IT</span> and start tour inspection journey</p>
+            <div class="store-buttons">
+                <a href="#" class="play-store">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Play Store">
+                </a>                
+                <a href="#" class="apple-store">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png" alt="Apple Store">
+                </a>
+            </div>
+        </div>
+        <div class="promo-image">
+            <img src="https://img.freepik.com/premium-photo/concept-mobile-phone-personal-data-protectionillustration_837518-4781.jpg" alt="Mobile Phones">
+        </div>
+    </div>
+    
+    <!--FOOTER PART HTML-->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <div class="flex items-center space-x-2">
+                    <img src="https://i.postimg.cc/fR0ZBhtN/IMG-20240826-165836.jpg" alt="Logo" class="h-10 image-opacity">
+                    <img src="https://i.postimg.cc/QCf7GYps/logo-4k.png" alt="Detectron" class="w-28 h-28 md:w-40 md:h-38 lg:w-48 lg:h-12 image-opacity">
+                </div>   
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">List Layout</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fa fa-map-marker"></i> 3015 Grand Ave, Coconut Grove, Merrick Way, FL 12345</p>
+                <p><i class="fa fa-phone"></i> +123-456-789</p>
+                <p><i class="fa fa-envelope"></i> sales@example.com</p>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Remain Updated</h3>
+                <input type="email" placeholder="Your email address">
+                <button>Sign up</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-icons flex justify-evenly p-4 bg-custom-dark">
+                <a href="#" class="text-gray-500 hover:text-gray-800 icon-large"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-gray-500 hover:text-gray-800 icon-large"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-500 hover:text-gray-800 icon-large"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="text-gray-500 hover:text-gray-800 icon-large"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-500 hover:text-gray-800 icon-large"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#" class="text-gray-500 hover:text-gray-800 icon-large"><i class="fab fa-youtube"></i></a>
+    
+            </div>
+        </div>
+        <p class="text-center">&copy; 2023. All rights reserved. Designed by Inspiry Themes</p>
+        </div>
+    </footer>    
+
+</body>
+</html>
+[21:17, 9/5/2024] Bratin: how to add gps at your website

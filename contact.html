@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
+    <link href="./output.css" rel="stylesheet">
+    <link href="http://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+        /* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url('https://m.economictimes.com/thumb/msid-99508823,width-1600,height-900,resizemode-4,imgsize-122134/cyber-security-istock.jpg');
+            background-size: cover; /* Ensure the image covers the entire area */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
+            background-attachment: fixed; /* Keep the image fixed in place while scrolling */
+            margin: 0; /* Remove default margins */
+            font-family: Arial, sans-serif; /* Default font */
+        }
+
+/* Custom hover effect for nav items */
+.nav-item {
+        transition: transform 0.3s ease, background-color 0.3s ease, font-size 0.3s ease;
+    }
+    .nav-item:hover {
+        transform: scale(1.1); /* Enlarges the item */
+          background: linear-gradient(90deg, #0ea5ea, #0bd1d1 36%, #0eeab3); /* More vibrant background color on hover */
+            color: black;
+            font-weight:500;
+            border-radius: 8px; /* Rounded corners */
+            font-size: 1.2rem; /* Enlarges the font size on hover (18px) */
+    }
+
+    /* Custom hover effect for buttons */
+    .btn-item {
+        transition: transform 0.3s ease, background-color 0.3s ease, font-size 0.3s ease;
+    }
+    .btn-item:hover {
+        color: red;/* Enlarges the button */
+        background-color: rgba(37, 99, 235, 1); /* Light background color on hover */
+        font-size: 0.875rem; /* Enlarges the font size on hover (18px) */
+    }
+
+    /* Navbar background color with black and increased transparency */
+
+
+/* Search bar styling */
+.search-bar {
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Light background for the search bar */
+            border-radius: 8px;
+            padding: 0.25rem; /* Adjust padding to control the height */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+            width: 250px; /* Adjust the width as needed */
+        }
+        .search-bar input {
+            border: none;
+            outline: none;
+            padding: 0.5rem;
+            background: transparent;
+            width: 100%;
+            font-size: 0.875rem; /* Adjust font size for the placeholder */
+            height: 2rem; /* Adjust height of the input */
+        }
+        .search-bar svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 0.5rem;
+            fill: white; /* Set icon color */
+        }
+
+        .sidebar-bg {
+            background-color: rgba(0, 0, 0, 0.4); /* Deep black with 40% opacity */
+        }
+        .image-opacity {
+            opacity: 0.9; /* 90% opacity */
+        }
+
+        /* Sidebar item hover effect */
+        .sidebar-item {
+            transition: background-color 0.3s ease, border-radius 0.3s ease; /* Smooth transition */
+        }
+        .sidebar-item:hover {
+            background-color: rgba(200, 150, 0.3, 0.5); /* Custom background color on hover */
+            border-radius: 8px; /* Rounded corners */
+            font-size: 1.1rem; /* Enlarged font size on hover */
+        }
+
+/* Dropdown Menu Styles */
+.dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.9);
+            min-width: 220px; /* Increased width for additional items */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 0.875rem;
+        }
+        .dropdown-content a:hover {
+            background-color: rgba(200, 150, 0.3, 0.5); /* Custom background color on hover */
+            border-radius: 8px; /* Rounded corners */
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+/* Contact Section */
+.contact {
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url(https://www.shutterstock.com/image-illustration/cybersecurity-digital-data-protection-technology-600nw-2112666005.jpg) no-repeat center center/cover;
+}
+
+/* Content */
+.content {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.content h2 {
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.content p {
+    font-weight: 300;
+}
+
+/* Containers */
+.container1, .container2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.container1 {
+    flex-direction: column;
+    align-items: center;
+}
+
+.container2 {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Contact Form */
+.contactForm {
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.contactForm h2 {
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.inputBox {
+    position: relative;
+    margin-top: 20px;
+}
+
+.inputBox input, .inputBox textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #333;
+    border-radius: 4px;
+    outline: none;
+    resize: none;
+}
+
+.inputBox input:focus, .inputBox textarea:focus {
+    border-color: #00bcd4;
+}
+
+.inputBox span {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 16px;
+    color: #666;
+    transition: 0.5s;
+}
+
+.inputBox input:focus ~ span, .inputBox input:valid ~ span,
+.inputBox textarea:focus ~ span, .inputBox textarea:valid ~ span {
+    color: #00bcd4;
+    font-size: 12px;
+    transform: translateY(-30px);
+}
+
+.inputBox input[type="submit"] {
+    background: #00bcd4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.inputBox input[type="submit"]:hover {
+    background: #0097a7;
+}
+
+/* Support Section */
+.support {
+    text-align: center;
+    background-color: #fff;
+    padding: 50px;
+    row-gap: 100px;
+    border-radius: 25px ;
+    margin: 20px;
+    width: 90%;
+}
+
+.text2 {
+    margin-bottom: 50px;
+}
+
+.text2 h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #00bcd4;
+}
+
+.para p {
+    font-size: 16px;
+    color: #666;
+    padding: 10px;
+
+}
+
+.button {
+    margin-top: 50px;
+}
+
+.my-button {
+    background-color: #00bcd4;
+    color: #fff;
+    border: 2px solid #00bcd4;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.my-button:hover {
+    border-color: #fff;
+    transform-style: preserve-3d;
+}
+
+/* Contact Info */
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    
+    padding: 50px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 25px;
+}
+
+.contactInfo .heading h3 {
+    display: flex;
+    font-size: 24px;
+    font-weight: 600;
+    color: #00bcd4;
+    margin-bottom: 20px;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.box .icon {
+    min-width: 60px;
+    height: 60px;
+    background: #00bcd4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 15px;
+}
+
+.box .icon svg {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+}
+
+.box .text {
+    font-size: 16px;
+    color: #333;
+    padding-left: 30px;
+}
+
+.box .text h3 {
+    font-weight: 500;
+    color: #00bcd4;
+    margin-bottom: 5px;
+}
+
+.box .text p {
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+.demo{
+          background: linear-gradient(90deg, #0ea5ea, #0bd1d1 51%, #0ea5ea);color: black;font-weight: 500;
+
+        }
+ /* Custom Media Query for 787px */
+ .sidebar {
+            transition: transform 0.3s ease;
+            transform: translateX(-100%);
+        }
+        .sidebar.active {
+            transform: translateX(0);
+        }
+        .display {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .display {
+        display: flex;
+    }
+}
+/* Responsive Design */
+@media (max-width: 991px) {
+    /* MAIN CONTENT BIG SCREENS */
+    .contact {
+        padding: 20px; /* Reduced padding for smaller screens */
+        text-align: center; /* Center-align text for better readability */
+    }
+
+    .container1, .container2 {
+        flex-direction: column;
+        align-items: center; /* Center items in column layout */
+    }
+
+    .container1 {
+        margin-bottom: 20px; /* Adjusted margin for better spacing */
+    }
+
+    .contactForm, .contactInfo {
+        width: 90%; /* Adjust width to fit smaller screens */
+        margin: 0 auto; /* Center align the forms and info */
+    }
+
+    .contactForm {
+        max-width: 100%; /* Ensure form takes full width within container */
+    }
+
+    .contactInfo {
+        margin: 20px auto; /* Added margin to ensure spacing around the info */
+    }
+
+    /* Adjust button sizes for smaller screens */
+    .inputBox input[type="submit"] {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .my-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    /* Reduce font sizes for headings and paragraphs for better fitting */
+    .content h2 {
+        font-size: 28px; /* Adjusted font size for smaller screens */
+    }
+
+    .content p {
+        font-size: 14px; /* Smaller font size for better readability */
+    }
+
+    .contactInfo .socialMedia a {
+        font-size: 20px; /* Adjusted icon size */
+    }
+
+    .box{
+        flex-direction: column;
+    }
+    /* FOOTER BIG SCREENS */
+    .footer {
+        padding: 20px 0; /* Reduced padding for smaller screens */
+    }
+
+    .footer .flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer .flex .items-center {
+        margin-bottom: 20px; /* Space between logo and navigation */
+    }
+
+    .footer img.h-10 {
+        height: 40px; /* Adjust logo size */
+    }
+
+    .footer img.h-48 {
+        height: 30px; /* Adjust second logo size */
+        width: 60px;  /* Adjust width */
+    }
+
+    .footer-nav {
+        margin-bottom: 20px; /* Space below navigation links */
+    }
+
+    .footer-nav a {
+        display: block; /* Stack navigation links vertically */
+        margin-bottom: 10px; /* Space between links */
+    }
+
+    .footer-social {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-social a {
+        font-size: 24px; /* Slightly larger icons for easier tapping */
+        margin-bottom: 10px; /* Space between icons */
+    }
+
+}
+
+@media (max-width: 767px) {
+    
+    /* FOOTER SMALL SCREENS */
+    .footer {
+        padding: 15px 0; /* Further reduced padding for very small screens */
+    }
+
+    .footer .flex {
+        padding: 0 10px; /* Reduced horizontal padding */
+    }
+
+    .footer img.h-10 {
+        height: 30px; /* Further adjust logo size */
+    }
+
+    .footer img.h-48 {
+        height: 25px; /* Further adjust second logo size */
+        width: 50px;  /* Further adjust width */
+    }
+
+    .footer-nav a {
+        font-size: 16px; /* Smaller font size for links */
+        margin-bottom: 8px; /* Space between links */
+    }
+
+    .footer-social a {
+        font-size: 20px; /* Smaller icons */
+        margin-bottom: 8px; /* Space between icons */
+    }
+
+    /* NAVBAR MOBILE DEVICES */
+    .navbar-background {
+        padding: 0.5rem;
+    }
+
+    .navbar-background img {
+        width: 80px; /* Adjust width for very small screens */
+    }
+
+    .search-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 10px 0;
+    }
+
+    .search-bar input {
+        width: 100%; /* Full width input */
+    }
+
+    .nav-item {
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+
+    .btn-item {
+        font-size: 14px; /* Smaller font size for mobile */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .dropdown-content {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #333; /* Example dropdown background */
+        width: 100%;
+        display: block; /* Show dropdown content on hover or click */
+    }
+}
+
+ 
+    </style>
+
+<body class="bg-gray-100 flex flex-col min-h-screen overflow-y-auto">
+    <div class="w-64 h-screen sidebar-bg text-white fixed top-0 left-0 sidebar md:transform-none md:translate-x-0">
+
+        <nav class="mt-0">
+            <ul>
+                <div class="flex items-center space-x-4">
+                    <!-- Logo and Detectron image container -->
+                    <a href="http://127.0.0.1:5500/main.html" class="flex items-center space-x-4">
+                        <img src="https://i.postimg.cc/fR0ZBhtN/IMG-20240826-165836.jpg" alt="Logo" class="h-12">
+                        <img src="https://i.postimg.cc/QCf7GYps/logo-4k.png" alt="Detectron" class="w-32 h-32 md:w-48 md:h-48 lg:w-64 lg:h-20">
+                    </a>
+                </div>
+                <li class="sidebar-item flex items-center px-4 py-4 my-2 cursor-pointer">
+                    <i class="fas fa-home mr-3"></i>
+                    <span>Home</span>
+                </li>
+                <li class="sidebar-item flex items-center px-4 py-4 my-2 cursor-pointer">
+                    <i class="fas fa-box mr-3"></i>
+                    <span>Product</span>
+                </li>
+                <li class="sidebar-item flex items-center px-4 py-4 my-2 cursor-pointer">
+                    <i class="fas fa-sign-in-alt mr-3"></i>
+                    <span>Login</span>
+                </li>
+                <li class="sidebar-item flex items-center px-4 py-4 my-2 cursor-pointer">
+                    <i class="fas fa-headset mr-3"></i>
+                    <span>Support</span>
+                </li>
+                <li class="sidebar-item flex items-center px-4 py-4 my-2 cursor-pointer">
+                    <i class="fas fa-envelope mr-3"></i>
+                    <span>Contact Us</span>
+                </li>
+                <li class="sidebar-item flex items-center px-3 py-1 cursor-pointer mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a7 7 0 100 14 7 7 0 000-14zM21 21l-4.35-4.35" />
+                    </svg>
+                    <span>Search</span>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar-background p-1 w-full top-0 left-0 z-10 flex items-center justify-between md:justify-center">
+        <div class="container flex items-center justify-between">
+            <div class="flex items-center space-x-4 display">
+                <!-- Logo and Detectron image container -->
+                <a href="http://127.0.0.1:5500/main.html" class="flex items-center space-x-4">
+                    <img src="https://i.postimg.cc/fR0ZBhtN/IMG-20240826-165836.jpg" alt="Logo" class="h-12">
+                    <img src="https://i.postimg.cc/QCf7GYps/logo-4k.png" alt="Detectron" class="w-32 h-32 md:w-48 md:h-48 lg:w-64 lg:h-20">
+                </a>
+            </div>
+            <ul class="flex space-x-4 items-center display ">
+                <li>
+
+                    <li><a href="http://127.0.0.1:5500/src/main.html" class="text-red-400 px-3 py-2 nav-item rounded-md text-lg">Home</a></li>
+                    <li><a href="http://127.0.0.1:5500/src/download.html" class="text-red-400 px-4 py-2 nav-item rounded-md text-lg">Download</a></li>
+                    <li class="dropdown ">
+                        <a href="#" class="text-red-400 px-3 py-2 nav-item rounded-md text-lg">Products</a>
+
+                    </li>
+                    <li><a href="http://127.0.0.1:5500//src/login.html" class="text-red-400 px-4 py-2 nav-item rounded-md text-lg">Login</a></li>
+                    <li><a href="http://127.0.0.1:5500//src/support.html" class="text-red-400 px-4 py-2 nav-item rounded-md text-lg">Support</a></li>
+
+                    <li>
+                        <div class="search-bar">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon">
+                              <circle cx="11" cy="11" r="6" />
+                              <line x1="16.5" y1="16.5" x2="21" y2="21" />
+                            </svg>
+                            <input type="text" placeholder="Search Forensic Data" aria-label="Search">
+                        </div>
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1:5500/src/demo.html" class="inline-block">
+                          <button class="demo text-black font-bold py-2 px-4 rounded-md  hover:shadow-lg transition-all btn-item text-sm">Demo Video</button>
+                      </a>
+                      
+                      </li>
+                 
+                </li>
+            
+            </ul>
+
+    </nav>
+    <div class="relative">
+        <button id="hamburger" class="text-white p-2 lg:hidden absolute top-1 right-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+    </div>
+    
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.querySelector('.sidebar');
+
+        hamburger.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    </script>
+    <section class="contact">    
+        <div class="content">
+            <h2>Contact Us</h2>
+            <p>Cybercrime is the greatest threat to every individual and every country in the world</p>
+        </div>
+        <div class="container1">
+            
+            <div class="contactForm">
+                <form action="">
+                    <h2>Send Message</h2>
+                    
+                    <div class="inputBox">
+                        <input type="text" name="" required="required">
+                        <span>Full Name</span>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="text" name="" required="required">
+                        <span>Email</span>
+                    </div>
+
+                    <div class="inputBox">
+                        <textarea name="" required="required"></textarea>
+                        <span>Type your Message...</span>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="submit" name="" value="Send">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="container2">
+            <div class="support">
+                <div class="text2">
+                    <h3>Need Support</h3>
+                </div>
+
+                <div class="para">
+                    <p>Visit the Detectron Knowledge Base for helpful resourse</p>
+                    <p>Enhance your cyber defences proactively and minimize the impact of incidents</p>
+                    <p>Address the shortage of security skills with readily available expert support</p>
+                </div>
+
+                <div class="button">
+                    <button class="my-button">VISIT SUPPORT</button>
+                </div>
+            </div>
+            
+            <div class="contactInfo">
+                <div class="heading">
+                    <h3>Get In Touch</h3>
+                </div>
+                <div class="box">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-100 -50 600 600"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+                    </div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>4671   Sugar Camp Road,<br>Owatonna,Minnesota,<br>55060</p>
+                    </div>
+                </div>
+                
+                <div class="box">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-140 -120 800 800"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+                    </div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>6289622310</p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-140 -120 800 800"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg></div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>konerbratin17@gmail.com</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+        <footer class="footer py-6 bg-current ">
+            <div class="flex justify-evenly items-center px-6 ">
+                <!-- Footer Logo and Navigation Links -->
+                <div class="flex items-center space-x-4">
+                    <img src="https://i.postimg.cc/fR0ZBhtN/IMG-20240826-165836.jpg" alt="Logo" class="h-10" />
+                    <img src="https://i.postimg.cc/QCf7GYps/logo-4k.png" alt="Detectron" class="h-48 w-48 md:w-20 lg:h-12 lg:w-24" />
+                </div>
+                <nav class="footer-nav mb-4 md:mb-0 flex-1 text-center gap-3">
+                    <a href="#" class="text-lg text-white hover:text-gray-300">Home</a>
+                    <a href="#" class="text-lg text-white hover:text-gray-300">About</a>
+                    <a href="#" class="text-lg text-white hover:text-gray-300">Services</a>
+                    <a href="#" class="text-lg text-white hover:text-gray-300">Contact us</a>
+                </nav>
+                <!-- Social Media Icons -->
+                <div class="footer-social flex items-center space-x-4">
+                    <a href="#" class="text-2xl text-white hover:text-gray-300"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-2xl text-white hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-2xl text-white hover:text-gray-300"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="text-2xl text-white hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-2xl text-white hover:text-gray-300"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="text-2xl text-white hover:text-gray-300"><i class="fab fa-google"></i></a>
+                </div>
+            </div>
+            <div class="footer p-4 bg-black bg-opacity-40 text-white text-center mt-6">
+                <p>&copy; 2024 Cyber Forensic Website. All rights reserved.</p>
+            </div>
+        </footer>    
+</body>
+</head>
+</html>

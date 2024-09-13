@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download</title>
+    <link href="./output.css" rel="stylesheet">
+  <link href="http://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            
+            background: url('https://img.freepik.com/free-vector/gradient-dark-dynamic-lines-background_23-2148995950.jpg') no-repeat center center fixed; 
+             background-size: cover;
+        }
+
+        .full-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+             background-image: url('https://img.freepik.com/free-vector/gradient-dark-dynamic-lines-background_23-2148995950.jpg'); 
+       
+            background-size: cover;
+            background-position: center; 
+            z-index: -1; 
+        } 
+
+        /* Custom hover effect for nav items */
+    .nav-item {
+            transition: transform 0.3s ease, background-color 0.3s ease, font-size 0.3s ease;
+        }
+        .nav-item:hover {
+        transform: scale(1.1); /* Enlarges the item */
+        background: linear-gradient(90deg, #0ea5ea, #0bd1d1 36%, #0eeab3);
+        /* More vibrant background color on hover */
+            color: black;
+            font-weight:500;
+            border-radius: 8px; /* Rounded corners */
+            font-size: 1.2rem; /* Enlarges the font size on hover (18px) */
+    }
+
+        /* Custom hover effect for buttons */
+        .btn-item {
+            transition: transform 0.3s ease, background-color 0.3s ease, font-size 0.3s ease;
+        }
+        .btn-item:hover {
+            color: darkred; /* Enlarges the button */
+            background-color: rgba(37, 99, 235, 1); /* Light background color on hover */
+            font-size: 0.875rem; /* Enlarges the font size on hover (18px) */
+        }
+
+        /* Navbar background color with black and increased transparency */
+        /* .navbar-background {
+            background-color: rgba(0, 0, 0, 0.6); }/* Black color with 60% opacity */
+    
+
+        /* Search bar styling */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Light background for the search bar */
+            border-radius: 8px;
+            padding: 0.25rem; /* Adjust padding to control the height */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+            width: 250px; /* Adjust the width as needed */
+        }
+        .search-bar input {
+            border: none;
+            outline: none;
+            padding: 0.5rem;
+            background: transparent;
+            width: 100%;
+            font-size: 0.875rem; /* Adjust font size for the placeholder */
+            height: 2rem; /* Adjust height of the input */
+        }
+        .search-bar svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 0.5rem;
+            fill: white; /* Set icon color */
+        }
+
+        .sidebar-bg {
+            background-color: rgba(0, 0, 0, 0.4); /* Deep black with 40% opacity */
+        }
+        .image-opacity {
+            opacity: 0.9; /* 90% opacity */
+        }
+
+        /* Sidebar item hover effect */
+        .sidebar-item {
+            transition: background-color 0.3s ease, border-radius 0.3s ease; /* Smooth transition */
+        }
+        .sidebar-item:hover {
+            background-color: rgba(200, 150, 0.3, 0.5); /* Custom background color on hover */
+            border-radius: 8px; /* Rounded corners */
+            font-size: 1.1rem; /* Enlarged font size on hover */
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.9);
+            min-width: 220px; /* Increased width for additional items */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 0.875rem;
+        }
+        .dropdown-content a:hover {
+            background-color: rgba(200, 150, 0.3, 0.5); /* Custom background color on hover */
+            border-radius: 8px; /* Rounded corners */
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        footer {
+    background-color: #2a2a2a;
+    color: #fff;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-logo {
+    flex: 1;
+    margin-right: 50px;
+}
+
+.footer-logo h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.footer-logo p {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.footer-links {
+    flex: 1;
+}
+
+.footer-links h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-contact {
+    flex: 1;
+    margin-right: 50px;
+}
+
+.footer-contact h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-contact p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+}
+
+.footer-newsletter {
+    flex: 1;
+}
+
+.footer-newsletter h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer-newsletter input[type="email"] {
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 3px;
+}
+
+.footer-newsletter button {
+    padding: 10px 20px;
+    background-color: #f58220;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    background-color: #1a1a1a;
+    
+    text-align: center;
+}
+.footer-bottom p {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.social-icons {
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 16px;
+}
+.demo{
+          background: linear-gradient(90deg, #0ea5ea, #0bd1d1 51%, #0ea5ea);color: black;font-weight: 500;
+
+        }
+
+
+  .gradient-text {
+    background: linear-gradient(90deg, #fbfb03, #fcf006 36%, #f8f403);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Ensures the text is visible as gradient */
+  }
+  
+  /* .bg-custom-dark {
+    background-color: #2a2a2a;
+  } */
+
+  .icon-large {
+    font-size: 4rem; /* Adjust the size as needed */
+  }
+  .custom-image-width {
+    width: 600px; /* Set your desired width */
+    height: 240px; /* Set your desired height */
+    object-fit: cover; /* Ensure the image covers the specified dimensions */
+}
+.sidebar {
+            transition: transform 0.3s ease;
+            transform: translateX(-100%);
+        }
+        .sidebar.active {
+            transform: translateX(0);
+        }
+        .display {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .display {
+        display: flex;
+    }
+}
+
+    </style>
+
+<body class="bg-gray-100 flex flex-col min-h-screen overflow-y-auto">
+
+        <div class="w-64 h-screen sidebar-bg text-white fixed top-0 left-0 sidebar md:transform-none md:translate-x-0">
+
+            <nav class="mt-0">
+                <ul>
+                    <div class="flex items-center space-x-4">
+                        <!-- Logo and Detectron image container -->
+                        <a href="http://127.0.0.1:5500/main.html" class="flex items-center space-x-4">
+                            <img src="https://i.postimg.cc/fR0ZBhtN/IMG-20240826-165836.jpg" alt="Logo" class="h-12">
+                            <img src="https://i.postimg.cc/QCf7GYps/logo-4k.png" alt="Detectron" class="w-32 h-32 md:w-48 md:h-48 lg:w-64 lg:h-20">
+                        </a>
+                    </div>
+                    <li class="sidebar-item flex items-center px-4 py-4 my-2 cursor-pointer">
+                        <i class="fas fa-home mr-3"></i>
+                        <span>Home</span>
+                    </li>
+                    <li class="sidebar-item flex items-center px-4 py-4 my-2 cursor-pointer">
+                        <i class="fas fa-box mr-3"></i>
+                        <span>Product</span>
+                    </li>
+                    <li class="sidebar-item flex items-center px-4 py-4 my-2 cursor-pointer">
+                        <i class="fas fa-sign-in-alt mr-3"></i>
+                        <span>Login</span>
+                    </li>
+                    <li class="sidebar-item flex items-center px-4 py-4 my-2 cursor-pointer">
+                        <i class="fas fa-headset mr-3"></i>
+                        <span>Support</span>
+                    </li>
+                    <li class="sidebar-item flex items-center px-4 py-4 my-2 cursor-pointer">
+                        <i class="fas fa-envelope mr-3"></i>
+                        <span>Contact Us</span>
+                    </li>
+                    <li class="sidebar-item flex items-center px-3 py-1 cursor-pointer mt-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a7 7 0 100 14 7 7 0 000-14zM21 21l-4.35-4.35" />
+                        </svg>
+                        <span>Search</span>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    
+        <!-- Navbar -->
+        <nav class="navbar-background p-1 w-full top-0 left-0 z-10 flex items-center justify-between md:justify-center">
+            <div class="container flex items-center justify-between">
+                <div class="flex items-center space-x-4 display">
+                    <!-- Logo and Detectron image container -->
+                    <a href="http://127.0.0.1:5500/main.html" class="flex items-center space-x-4">
+                        <img src="https://i.postimg.cc/fR0ZBhtN/IMG-20240826-165836.jpg" alt="Logo" class="h-12">
+                        <img src="https://i.postimg.cc/QCf7GYps/logo-4k.png" alt="Detectron" class="w-32 h-32 md:w-48 md:h-48 lg:w-64 lg:h-20">
+                    </a>
+                </div>
+                <ul class="flex space-x-4 items-center display ">
+                    <li>
+
+                        <li><a href="http://127.0.0.1:5500/src/main.html" class="text-red-400 px-3 py-2 nav-item rounded-md text-lg">Home</a></li>
+                        <li class="dropdown ">
+                            <a href="#" class="text-red-400 px-3 py-2 nav-item rounded-md text-lg">Products</a>
+    
+                        </li>
+                        <li><a href="http://127.0.0.1:5500//src/login.html" class="text-red-400 px-4 py-2 nav-item rounded-md text-lg">Login</a></li>
+                        <li><a href="http://127.0.0.1:5500//src/support.html" class="text-red-400 px-4 py-2 nav-item rounded-md text-lg">Support</a></li>
+                        <li><a href="http://127.0.0.1:5500//src/contact.html" class="text-red-400 px-4 py-2 nav-item rounded-md text-lg">Contact us</a></li>
+                        <li>
+                            <div class="search-bar">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon">
+                                  <circle cx="11" cy="11" r="6" />
+                                  <line x1="16.5" y1="16.5" x2="21" y2="21" />
+                                </svg>
+                                <input type="text" placeholder="Search Forensic Data" aria-label="Search">
+                            </div>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:5500/src/demo.html" class="inline-block">
+                              <button class="demo text-black font-bold py-2 px-4 rounded-md  hover:shadow-lg transition-all btn-item text-sm">Demo Video</button>
+                          </a>
+                          
+                          </li>
+                     
+                    </li>
+                
+                </ul>
+
+        </nav>
+        <div class="relative">
+            <button id="hamburger" class="text-white p-2 lg:hidden absolute top-1 right-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        
+        <script>
+            const hamburger = document.getElementById('hamburger');
+            const sidebar = document.querySelector('.sidebar');
+    
+            hamburger.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+            });
+        </script>
+<div class="mb-9 text-center mt-5 text-yellow-50 mx-5">
+    <p class="text-6xl">Get started with Detectron</p>
+
+</div>
+    <div class="py-8">
+            <!-- First div with H1 text -->
+
+            
+            <!-- Second div with text -->
+
+        
+             <!-- Third div with nested divs -->
+         <div class="flex flex-wrap justify-center gap-8">
+            <!-- Download item 1 -->
+            <div class="bg-black bg-opacity-70 p-5 rounded-lg text-center w-64 flex flex-col items-center">
+                <img src="https://static.vecteezy.com/system/resources/previews/021/496/617/non_2x/windows-symbol-brand-logo-design-microsoft-software-illustration-free-vector.jpg " alt="Windows App" class="w-full h-62 object-contain rounded-lg mb-3">
+                <p class=" text-yellow-50 ">Windows App</p>
+                <a href="https://example.com/windows-download" download class="mt-2 text-blue-400 hover:underline">Download for Windows</a>
+                
+            </div>
+        <!-- Download item 2 -->
+           <div class="bg-black bg-opacity-70 p-5 rounded-lg text-center w-64 flex flex-col items-center">
+            <img src="https://static-00.iconduck.com/assets.00/linux-icon-2048x2048-sy06t4un.png" alt="Android App" class="w-full h-62 object-contain rounded-lg mb-3">
+            <p class=" text-yellow-50 ">Android App</p>
+            <a href="https://example.com/android-download" download class="mt-2 text-blue-400 hover:underline">Download for Android</a>
+            </div>
+        
+        <!-- Download item 3 -->
+         <div class="bg-black bg-opacity-70 p-5 rounded-lg text-center w-64 flex flex-col items-center">
+            <img src="https://wallpapercave.com/wp/wp11056323.jpg" alt="Other Platform" class="w-full h-48 object-contain rounded-lg mb-3">
+            <p class=" text-yellow-50 ">Mac OS</p>
+            <a href="https://example.com/other-download" download class="mt-2 text-blue-400 hover:underline">Download for mac os</a>
+         </div>
+    </div>
+</div>
+
+
+<div class="mb-9 text-center  text-yellow-50 mx-5">
+    <p class="text-3xl">Download and install Detectron </p>
+<p class="text-2xl">Dependable,automated safeguarding of social media , web and app based evidence</p>
+</div>
+
+
+<div class="mt-5 mb-5 mx-auto">
+    <a href="https://example.com">
+        <img src="https://i.postimg.cc/tgKqp2kH/Leonardo-Phoenix-A-futuristic-social-media-investigation-tool-2-2.jpg" 
+             alt="Example Image" 
+             style="height: 400px; width: 800px;" 
+             class="shadow-lg border-8 border-black">
+    </a>
+</div>
+
+
+
+
+<div class="flex flex-col space-y-5 mt-5 mx-4 md:mx-36 mb-10">
+    <!-- First Div -->
+    <div class="flex flex-col md:flex-row p-4 shadow-lg space-y-4 md:space-y-0 md:space-x-4 items-center justify-between">
+        <a href="https://example.com" class="w-full md:w-1/2">
+            <img src="https://i.postimg.cc/k5J7k8Yn/Leonardo-Phoenix-A-futuristic-social-media-investigation-tool-3-1.jpg" alt="Example Image 1" class="w-full h-auto rounded-3xl">
+        </a>
+        <p class="text-2xl md:text-4xl font-bold text-center bg-black opacity-55 text-yellow-100 mt-4 md:mt-0 md:w-1/2">
+            Identifies Influencers and Key Players
+        </p>
+    </div>
+
+    <!-- Second Div -->
+    <div class="flex flex-col md:flex-row p-4 shadow-lg space-y-4 md:space-y-0 md:space-x-4 items-center justify-between rounded">
+        <p class="text-2xl md:text-4xl bg-black opacity-55 text-yellow-100 font-bold text-center md:w-1/2">
+            Detects and Investigates Anomalies
+        </p>
+        <a href="https://example.com" class="w-full md:w-1/2">
+            <img src="https://i.postimg.cc/13ZCB1JF/Leonardo-Phoenix-A-futuristic-social-media-investigation-tool-2.jpg" alt="Example Image 2" class="w-full h-auto rounded-3xl">
+        </a>
+    </div>
+
+    <!-- Third Div -->
+    <div class="flex flex-col md:flex-row p-4 shadow-lg space-y-4 md:space-y-0 md:space-x-4 items-center justify-between rounded">
+        <a href="https://example.com" class="w-full md:w-1/2">
+            <img src="https://i.postimg.cc/d3bWgbFz/Leonardo-Phoenix-A-futuristic-social-media-investigation-tool-1-4.jpg" alt="Example Image 3" class="w-full h-auto rounded-3xl">
+        </a>
+        <p class="text-2xl md:text-4xl bg-black opacity-55 text-yellow-100 font-bold text-center md:w-1/2 mt-4 md:mt-0">
+            Enhances Competitive Analysis
+        </p>
+    </div>
+</div>
+
+
+<div class="mt-5  mx-auto mb-9">
+    <a href="https://example.com">
+        <img src="https://i.postimg.cc/ncM21c4M/Leonardo-Phoenix-A-futuristic-social-media-investigation-tool-3.jpg" 
+             alt="Example Image" 
+             style="height: 400px; width: 800px;" 
+             class="shadow-lg border-8 border-black">
+    </a>
+</div>
+
+
+<div class="flex flex-wrap justify-center space-x-6 mb-5">
+    <!-- Card 1 -->
+    <div class="bg-yellow-50 rounded-lg shadow-lg p-6 w-80 text-center mb-5 sm:mb-0">
+        <h2 class="text-xl font-semibold px-6 mb-3">REAL-TIME INSIGHTS</h2>
+        <p class="text-yellow-500 mt-2 px-5">Collects and monitors posts, comments, and user profiles from social media for real-time and historical insights into activity and sentiment.</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-yellow-50 rounded-lg shadow-lg p-6 w-80 text-center mb-5 sm:mb-0">
+        <h2 class="text-xl font-semibold px-6 mb-3">ADVANCED SEARCH</h2>
+        <p class="text-green-700 mt-2 px-5">Provides advanced search and analysis tools to filter data by keywords, hashtags, and location, detecting trends and patterns.</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-yellow-50 rounded-lg shadow-lg p-6 w-80 text-center mb-5 sm:mb-0">
+        <h2 class="text-xl font-semibold px-4 mb-3">DETAILED REPORT</h2>
+        <p class="text-red-700 mt-2 px-5">Generates detailed reports and visualizations like charts and dashboards, presenting data clearly for strategic planning and compliance.</p>
+    </div>
+</div>
+
+
+
+<footer class="bg-gray-800 text-white">
+    <div class="footer-container container mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-start md:items-center">
+        <!-- Footer Logo -->
+        <div class="footer-logo mb-8 md:mb-0">
+            <div class="flex flex-col items-center md:items-start space-y-4 md:space-y-0 md:flex-row md:space-x-6">
+                <img src="https://i.postimg.cc/QCf7GYps/logo-4k.png" alt="Detectron" class="w-28 h-28 md:w-36 md:h-32 lg:w-48 lg:h-40 image-opacity">
+            </div>
+        </div>
+        <!-- Footer Links -->
+        <div class="footer-links mb-8 md:mb-0">
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+                <li><a href="#" class="hover:text-gray-400">Home</a></li>
+                <li><a href="#" class="hover:text-gray-400">Blog</a></li>
+                <li><a href="#" class="hover:text-gray-400">List Layout</a></li>
+                <li><a href="#" class="hover:text-gray-400">Contact</a></li>
+            </ul>
+        </div>
+        <!-- Footer Contact -->
+        <div class="footer-contact mb-8 md:mb-0">
+            <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+            <p class="flex items-center mb-2"><i class="fa fa-map-marker mr-2"></i> 3015 Grand Ave, Coconut Grove, Merrick Way, FL 12345</p>
+            <p class="flex items-center mb-2"><i class="fa fa-phone mr-2"></i> +123-456-789</p>
+            <p class="flex items-center"><i class="fa fa-envelope mr-2"></i> sales@example.com</p>
+        </div>
+        <!-- Footer Newsletter -->
+        <div class="footer-newsletter">
+            <h3 class="text-lg font-semibold mb-4">Remain Updated</h3>
+            <input type="email" placeholder="Your email address" class="p-2 rounded bg-gray-700 text-white mb-2 w-full md:w-auto">
+            <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Sign up</button>
+        </div>
+    </div>
+    <!-- Footer Bottom -->
+    <div class="footer-bottom bg-gray-900 p-4">
+        <div class="social-icons flex justify-center md:justify-evenly space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-youtube"></i></a>
+        </div>
+        
+    </div>
+    <p class="text-center text-sm mt-4">&copy; 2023. All rights reserved. Designed by Inspiry Themes</p>
+</footer>
+
+</body>
+</head>
+</html>

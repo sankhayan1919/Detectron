@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Image Example</title>
+    <link href="./output.css" rel="stylesheet">
+  <link href="http://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+            body {
+            background-image: url('https://i.postimg.cc/653QKvjg/pngtree-police-cyber-security-technology-background-design-image-15805160.jpg');
+            background-size: cover; /* Ensure the image covers the entire area */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
+            background-attachment: fixed; /* Keep the image fixed in place while scrolling */
+            margin: 0; /* Remove default margins */
+            font-family: Arial, sans-serif; /* Default font */
+        }
+    
+    /* Custom hover effect for nav items */
+    .nav-item {
+            transition: transform 0.3s ease, background-color 0.3s ease, font-size 0.3s ease;
+        }
+        .nav-item:hover {
+        transform: scale(1.1); /* Enlarges the item */
+        background: linear-gradient(90deg, #0ea5ea, #0bd1d1 36%, #0eeab3); /* More vibrant background color on hover */
+            color: black;
+            font-weight:500;
+            border-radius: 8px; /* Rounded corners */
+            font-size: 1.2rem; /* Enlarges the font size on hover (18px) */
+    }
+
+        /* Custom hover effect for buttons */
+        .btn-item {
+            transition: transform 0.3s ease, background-color 0.3s ease, font-size 0.3s ease;
+        }
+        .btn-item:hover {
+            color: red; /* Enlarges the button */
+            background-color: rgba(37, 99, 235, 1); /* Light background color on hover */
+            font-size: 0.875rem; /* Enlarges the font size on hover (18px) */
+        }
+
+        /* Navbar background color with black and increased transparency */
+        /* .navbar-background {
+            background-color: rgba(0, 0, 0, 0.6);} /* Black color with 60% opacity */
+      
+
+        /* Search bar styling */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Light background for the search bar */
+            border-radius: 8px;
+            padding: 0.25rem; /* Adjust padding to control the height */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+            width: 250px; /* Adjust the width as needed */
+        }
+        .search-bar input {
+            border: none;
+            outline: none;
+            padding: 0.5rem;
+            background: transparent;
+            width: 100%;
+            font-size: 0.875rem; /* Adjust font size for the placeholder */
+            height: 2rem; /* Adjust height of the input */
+        }
+        .search-bar svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 0.5rem;
+            fill: white; /* Set icon color */
+        }
+    
+ 
+     /* Sidebar Styles */
+     .sidebar-bg {
+            background-color: rgba(0, 0, 0, 0.4); /* Deep black with 40% opacity */
+        }
+        .image-opacity {
+            opacity: 0.9; /* 90% opacity */
+        }
+
+        /* Sidebar item hover effect */
+        .sidebar-item {
+            transition: background-color 0.3s ease, border-radius 0.3s ease; /* Smooth transition */
+        }
+        .sidebar-item:hover {
+            background-color: rgba(200, 150, 0.3, 0.5); /* Custom background color on hover */
+            border-radius: 8px; /* Rounded corners */
+            font-size: 1.1rem; /* Enlarged font size on hover */
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000;
+            color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            z-index: 1;
+            width: 100%;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .dropdown-content select {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            background: #000;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        footer {
+    background-color: #2a2a2a;
+    color: #fff;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-logo {
+    flex: 1;
+    margin-right: 50px;
+}
+
+.footer-logo h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.footer-logo p {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.footer-links {
+    flex: 1;
+}
+
+.footer-links h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-contact {
+    flex: 1;
+    margin-right: 50px;
+}
+
+.footer-contact h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-contact p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+}
+
+.footer-newsletter {
+    flex: 1;
+}
+
+.footer-newsletter h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer-newsletter input[type="email"] {
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 3px;
+}
+
+.footer-newsletter button {
+    padding: 10px 20px;
+    background-color: #f58220;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    background-color: #1a1a1a;
+    
+    text-align: center;
+}
+
+.social-icons {
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 16px;
+}
+.demo{
+          background: linear-gradient(90deg, #0ea5ea, #0bd1d1 51%, #0ea5ea);color: black;font-weight: 500;
+
+        }
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #aaa;
+}
+
+
+.sidebar {
+            transition: transform 0.3s ease;
+            transform: translateX(-100%);
+        }
+        .sidebar.active {
+            transform: translateX(0);
+        }
+        .display {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .display {
+        display: flex;
+    }
+}
+
+     
+    </style>
+
+<body class="bg-gray-100 flex flex-col min-h-screen overflow-y-auto">
+    <div class="w-64 h-screen sidebar-bg text-white fixed top-0 left-0 sidebar md:transform-none md:translate-x-0">
+
+        <nav class="mt-0">
+            <ul>
+                <div class="flex items-center space-x-4">
+                    <!-- Logo and Detectron image container -->
+                    <a href="http://127.0.0.1:5500/main.html" class="flex items-center space-x-4">
+                        <img src="https://i.postimg.cc/fR0ZBhtN/IMG-20240826-165836.jpg" alt="Logo" class="h-12">
+                        <img src="https://i.postimg.cc/QCf7GYps/logo-4k.png" alt="Detectron" class="w-32 h-32 md:w-48 md:h-48 lg:w-64 lg:h-20">
+                    </a>
+                </div>
+                <li class="sidebar-item flex items-center px-4 py-4 my-2 cursor-pointer">
+                    <i class="fas fa-home mr-3"></i>
+                    <span>Home</span>
+                </li>
+                <li class="sidebar-item flex items-center px-4 py-4 my-2 cursor-pointer">
+                    <i class="fas fa-box mr-3"></i>
+                    <span>Product</span>
+                </li>
+                <li class="sidebar-item flex items-center px-4 py-4 my-2 cursor-pointer">
+                    <i class="fas fa-sign-in-alt mr-3"></i>
+                    <span>Login</span>
+                </li>
+                <li class="sidebar-item flex items-center px-4 py-4 my-2 cursor-pointer">
+                    <i class="fas fa-headset mr-3"></i>
+                    <span>Support</span>
+                </li>
+                <li class="sidebar-item flex items-center px-4 py-4 my-2 cursor-pointer">
+                    <i class="fas fa-envelope mr-3"></i>
+                    <span>Contact Us</span>
+                </li>
+                <li class="sidebar-item flex items-center px-3 py-1 cursor-pointer mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a7 7 0 100 14 7 7 0 000-14zM21 21l-4.35-4.35" />
+                    </svg>
+                    <span>Search</span>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar-background p-1 w-full top-0 left-0 z-10 flex items-center justify-between md:justify-center">
+        <div class="container flex items-center justify-between">
+            <div class="flex items-center space-x-4 display">
+                <!-- Logo and Detectron image container -->
+                <a href="http://127.0.0.1:5500/main.html" class="flex items-center space-x-4">
+                    <img src="https://i.postimg.cc/fR0ZBhtN/IMG-20240826-165836.jpg" alt="Logo" class="h-12">
+                    <img src="https://i.postimg.cc/QCf7GYps/logo-4k.png" alt="Detectron" class="w-32 h-32 md:w-48 md:h-48 lg:w-64 lg:h-20">
+                </a>
+            </div>
+            <ul class="flex space-x-4 items-center display ">
+                <li>
+
+                    <li><a href="http://127.0.0.1:5500/src/main.html" class="text-red-400 px-3 py-2 nav-item rounded-md text-lg">Home</a></li>
+                    <li><a href="http://127.0.0.1:5500/src/download.html" class="text-red-400 px-4 py-2 nav-item rounded-md text-lg">Download</a></li>
+                    <li class="dropdown ">
+                        <a href="#" class="text-red-400 px-3 py-2 nav-item rounded-md text-lg">Products</a>
+
+                    </li>
+                    <li><a href="http://127.0.0.1:5500//src/login.html" class="text-red-400 px-4 py-2 nav-item rounded-md text-lg">Login</a></li>
+                    <li><a href="http://127.0.0.1:5500//src/support.html" class="text-red-400 px-4 py-2 nav-item rounded-md text-lg">Support</a></li>
+                    <li><a href="http://127.0.0.1:5500//src/contact.html" class="text-red-400 px-4 py-2 nav-item rounded-md text-lg">Contact us</a></li>
+                    <li>
+                        <div class="search-bar">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon">
+                              <circle cx="11" cy="11" r="6" />
+                              <line x1="16.5" y1="16.5" x2="21" y2="21" />
+                            </svg>
+                            <input type="text" placeholder="Search Forensic Data" aria-label="Search">
+                        </div>
+                    </li>
+                   
+                 
+                </li>
+            
+            </ul>
+
+    </nav>
+    <div class="relative">
+        <button id="hamburger" class="text-white p-2 lg:hidden absolute top-0 right-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+    </div>
+    
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.querySelector('.sidebar');
+
+        hamburger.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    </script>
+
+    <!-- First Div -->
+    <div class="mb-5 my-8">
+        <h1 class="text-4xl font-bold bg-black bg-opacity-70 text-white p-2">Schedule a Demo with Detectron</h1>
+        <p class="bg-black bg-opacity-70 text-white">See how you can reduce the cost and complexity of compliance recordkeeping and eDiscovery</p>
+    </div>
+
+    <!-- Second Div -->
+    <div class="text-center p-5 bg-black bg-opacity-90 mx-auto max-w-md">
+        <input type="text" placeholder="Username" class="block mx-auto mb-3 px-3 py-2 border rounded-md border-gray-300" />
+        <input type="email" placeholder="Email ID" class="block mx-auto mb-3 px-3 py-2 border rounded-md border-gray-300" />
+        <div class="dropdown block mx-auto mb-3">
+            <button class="block px-3 py-2 border rounded-md border-gray-300 text-white bg-black">Select Country ▼</button>
+            <div class="dropdown-content">
+                <select>
+                    <option >Select</option>
+                    <option value="AF">Afghanistan</option>
+                    <option value="AL">Albania</option>
+                    <option value="DZ">Algeria</option>
+                    <option value="AS">American Samoa</option>
+                    <option value="AD">Andorra</option>
+                    <option value="AO">Angola</option>
+                    <option value="AI">Anguilla</option>
+                    <option value="AG">Antigua and Barbuda</option>
+                    <option value="AR">Argentina</option>
+                    <option value="AM">Armenia</option>
+                    <option value="AW">Aruba</option>
+                    <option value="AU">Australia</option>
+                    <option value="AT">Austria</option>
+                    <option value="AZ">Azerbaijan</option>
+                    <option value="BS">Bahamas</option>
+                    <option value="BH">Bahrain</option>
+                    <option value="BD">Bangladesh</option>
+                    <option value="BB">Barbados</option>
+                    <option value="BY">Belarus</option>
+                    <option value="BE">Belgium</option>
+                    <option value="BZ">Belize</option>
+                    <option value="BJ">Benin</option>
+                    <option value="BM">Bermuda</option>
+                    <option value="BT">Bhutan</option>
+                    <option value="BO">Bolivia</option>
+                    <option value="BA">Bosnia and Herzegovina</option>
+                    <option value="BW">Botswana</option>
+                    <option value="BV">Bouvet Island</option>
+                    <option value="BR">Brazil</option>
+                    <option value="IO">British Indian Ocean Territory</option>
+                    <option value="BN">Brunei Darussalam</option>
+                    <option value="BG">Bulgaria</option>
+                    <option value="BF">Burkina Faso</option>
+                    <option value="BI">Burundi</option>
+                    <option value="KH">Cambodia</option>
+                    <option value="CM">Cameroon</option>
+                    <option value="CA">Canada</option>
+                    <option value="CV">Cape Verde</option>
+                    <option value="KY">Cayman Islands</option>
+                    <option value="CF">Central African Republic</option>
+                    <option value="TD">Chad</option>
+                    <option value="CL">Chile</option>
+                    <option value="CN">China</option>
+                    <option value="CX">Christmas Island</option>
+                    <option value="CC">Cocos (Keeling) Islands</option>
+                    <option value="CO">Colombia</option>
+                    <option value="KM">Comoros</option>
+                    <option value="CG">Congo</option>
+                    <option value="CD">Congo, Democratic Republic of the</option>
+                    <option value="CK">Cook Islands</option>
+                    <option value="CR">Costa Rica</option>
+                    <option value="CI">Cote d'Ivoire</option>
+                    <option value="HR">Croatia</option>
+                    <option value="CU">Cuba</option>
+                    <option value="CY">Cyprus</option>
+                    <option value="CZ">Czech Republic</option>
+                    <option value="DK">Denmark</option>
+                    <option value="DJ">Djibouti</option>
+                    <option value="DM">Dominica</option>
+                    <option value="DO">Dominican Republic</option>
+                    <option value="EC">Ecuador</option>
+                    <option value="EG">Egypt</option>
+                    <option value="SV">El Salvador</option>
+                    <option value="GQ">Equatorial Guinea</option>
+                    <option value="ER">Eritrea</option>
+                    <option value="EE">Estonia</option>
+                    <option value="ET">Ethiopia</option>
+                    <option value="FK">Falkland Islands (Malvinas)</option>
+                    <option value="FO">Faroe Islands</option>
+                    <option value="FJ">Fiji</option>
+                    <option value="FI">Finland</option>
+                    <option value="FR">France</option>
+                    <option value="GF">French Guiana</option>
+                    <option value="PF">French Polynesia</option>
+                    <option value="TF">French Southern Territories</option>
+                    <option value="GA">Gabon</option>
+                    <option value="GM">Gambia</option>
+                    <option value="GE">Georgia</option>
+                    <option value="DE">Germany</option>
+                    <option value="GH">Ghana</option>
+                    <option value="GI">Gibraltar</option>
+                    <option value="GR">Greece</option>
+                    <option value="GL">Greenland</option>
+                    <option value="GD">Grenada</option>
+                    <option value="GP">Guadeloupe</option>
+                    <option value="GU">Guam</option>
+                    <option value="GT">Guatemala</option>
+                    <option value="GG">Guernsey</option>
+                    <option value="GN">Guinea</option>
+                    <option value="GW">Guinea-Bissau</option>
+                    <option value="GY">Guyana</option>
+                    <option value="HT">Haiti</option>
+                    <option value="HM">Heard Island and McDonald Islands</option>
+                    <option value="HN">Honduras</option>
+                    <option value="HK">Hong Kong</option>
+                    <option value="HU">Hungary</option>
+                    <option value="IS">Iceland</option>
+                    <option value="IN">India</option>
+                    <option value="ID">Indonesia</option>
+                    <option value="IR">Iran</option>
+                    <option value="IQ">Iraq</option>
+                    <option value="IE">Ireland</option>
+                    <option value="IM">Isle of Man</option>
+                    <option value="IL">Israel</option>
+                    <option value="IT">Italy</option>
+                    <option value="JE">Jersey</option>
+                    <option value="JM">Jamaica</option>
+                    <option value="JP">Japan</option>
+                    <option value="JE">Jersey</option>
+                    <option value="JO">Jordan</option>
+                    <option value="KZ">Kazakhstan</option>
+                    <option value="KE">Kenya</option>
+                    <option value="KI">Kiribati</option>
+                    <option value="KP">Korea, Democratic People's Republic of</option>
+                    <option value="KR">Korea, Republic of</option>
+                    <option value="KW">Kuwait</option>
+                    <option value="KG">Kyrgyzstan</option>
+                    <option value="LA">Lao People's Democratic Republic</option>
+                    <option value="LV">Latvia</option>
+                    <option value="LB">Lebanon</option>
+                    <option value="LS">Lesotho</option>
+                    <option value="LR">Liberia</option>
+                    <option value="LY">Libya</option>
+                    <option value="LI">Liechtenstein</option>
+                    <option value="LT">Lithuania</option>
+                    <option value="LU">Luxembourg</option>
+                    <option value="MO">Macao</option>
+                    <option value="MK">Macedonia</option>
+                    <option value="MG">Madagascar</option>
+                    <option value="MW">Malawi</option>
+                    <option value="MY">Malaysia</option>
+                    <option value="MV">Maldives</option>
+                    <option value="ML">Mali</option>
+                    <option value="MT">Malta</option>
+                    <option value="MH">Marshall Islands</option>
+                    <option value="MQ">Martinique</option>
+                    <option value="MR">Mauritania</option>
+                    <option value="MU">Mauritius</option>
+                    <option value="YT">Mayotte</option>
+                    <option value="MX">Mexico</option>
+                    <option value="FM">Micronesia</option>
+                    <option value="MD">Moldova</option>
+                    <option value="MC">Monaco</option>
+                    <option value="MN">Mongolia</option>
+                    <option value="ME">Montenegro</option>
+                    <option value="MS">Montserrat</option>
+                    <option value="MA">Morocco</option>
+                    <option value="MZ">Mozambique</option>
+                    <option value="MM">Myanmar</option>
+                    <option value="NA">Namibia</option>
+                    <option value="NR">Nauru</option>
+                    <option value="NP">Nepal</option>
+                    <option value="NL">Netherlands</option>
+                    <option value="NC">New Caledonia</option>
+                    <option value="NZ">New Zealand</option>
+                    <option value="NI">Nicaragua</option>
+                    <option value="NE">Niger</option>
+                    <option value="NG">Nigeria</option>
+                    <option value="NU">Niue</option>
+                    <option value="NF">Norfolk Island</option>
+                    <option value="MP">Northern Mariana Islands</option>
+                    <option value="NO">Norway</option>
+                    <option value="OM">Oman</option>
+                    <option value="PK">Pakistan</option>
+                    <option value="PW">Palau</option>
+                    <option value="PS">Palestine</option>
+                    <option value="PA">Panama</option>
+                    <option value="PG">Papua New Guinea</option>
+                    <option value="PY">Paraguay</option>
+                    <option value="PE">Peru</option>
+                    <option value="PH">Philippines</option>
+                    <option value="PN">Pitcairn</option>
+                    <option value="PL">Poland</option>
+                    <option value="PT">Portugal</option>
+                    <option value="PR">Puerto Rico</option>
+                    <option value="QA">Qatar</option>
+                    <option value="RE">Réunion</option>
+                    <option value="RO">Romania</option>
+                    <option value="RU">Russia</option>
+                    <option value="RW">Rwanda</option>
+                    <option value="BL">Saint Barthélemy</option>
+                    <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+                    <option value="KN">Saint Kitts and Nevis</option>
+                    <option value="LC">Saint Lucia</option>
+                    <option value="MF">Saint Martin</option>
+                    <option value="PM">Saint Pierre and Miquelon</option>
+                    <option value="VC">Saint Vincent and the Grenadines</option>
+                    <option value="WS">Samoa</option>
+                    <option value="SM">San Marino</option>
+                    <option value="ST">Sao Tome and Principe</option>
+                    <option value="SA">Saudi Arabia</option>
+                    <option value="SN">Senegal</option>
+                    <option value="RS">Serbia</option>
+                    <option value="SC">Seychelles</option>
+                    <option value="SL">Sierra Leone</option>
+                    <option value="SG">Singapore</option>
+                    <option value="SX">Sint Maarten</option>
+                    <option value="SK">Slovakia</option>
+                    <option value="SI">Slovenia</option>
+                    <option value="SB">Solomon Islands</option>
+                    <option value="SO">Somalia</option>
+                    <option value="ZA">South Africa</option>
+                    <option value="GS">South Georgia and the South Sandwich Islands</option>
+                    <option value="SS">South Sudan</option>
+                    <option value="ES">Spain</option>
+                    <option value="LK">Sri Lanka</option>
+                    <option value="SD">Sudan</option>
+                    <option value="SR">Suriname</option>
+                    <option value="SJ">Svalbard and Jan Mayen</option>
+                    <option value="SZ">Swaziland</option>
+                    <option value="SE">Sweden</option>
+                    <option value="CH">Switzerland</option>
+                    <option value="SY">Syrian Arab Republic</option>
+                    <option value="TW">Taiwan</option>
+                    <option value="TJ">Tajikistan</option>
+                    <option value="TZ">Tanzania</option>
+                    <option value="TH">Thailand</option>
+                    <option value="TL">Timor-Leste</option>
+                    <option value="TG">Togo</option>
+                    <option value="TK">Tokelau</option>
+                    <option value="TO">Tonga</option>
+                    <option value="TT">Trinidad and Tobago</option>
+                    <option value="TN">Tunisia</option>
+                    <option value="TR">Turkey</option>
+                    <option value="TM">Turkmenistan</option>
+                    <option value="TC">Turks and Caicos Islands</option>
+                    <option value="TV">Tuvalu</option>
+                    <option value="UG">Uganda</option>
+                    <option value="UA">Ukraine</option>
+                    <option value="AE">United Arab Emirates</option>
+                    <option value="GB">United Kingdom</option>
+                    <option value="US">United States</option>
+                    <option value="UM">United States Minor Outlying Islands</option>
+                    <option value="UY">Uruguay</option>
+                    <option value="UZ">Uzbekistan</option>
+                    <option value="VU">Vanuatu</option>
+                    <option value="VE">Venezuela</option>
+                    <option value="VN">Viet Nam</option>
+                    <option value="VG">Virgin Islands, British</option>
+                    <option value="VI">Virgin Islands, U.S.</option>
+                    <option value="WF">Wallis and Futuna</option>
+                    <option value="EH">Western Sahara</option>
+                    <option value="YE">Yemen</option>
+                    <option value="ZM">Zambia</option>
+                    <option value="ZW">Zimbabwe</option>
+                </select>
+            </div>
+        </div>
+        <p class="mb-3 text-white font-sans">Detectron needs the contact information you provide to us to contact you about our products and services. You may unsubscribe from these communications at any time. For information on how to unsubscribe, as well as our privacy practices and commitment to protecting your privacy, please review our Privacy Policy.</p>
+        <button class=" px-4 py-2 bg-gray-800 text-white rounded-md font-medium  hover:text-red-500 hover:font-bold transition duration-300">Get a demo</button>
+    </div>
+
+    <!-- Third Div -->
+    <div class="text-center mb-5 my-7 mx-3">
+        <h2 class="text-4xl font-semibold text-white bg-black opacity-90">Why We Should Chat</h2>
+        <p class="text-white bg-black opacity-90">If online recordkeeping is a current priority, you may be facing challenges that we have helped other professionals overcome. </p>
+    </div>
+
+    <!-- Fourth Div -->
+    <div class="flex flex-wrap justify-center space-x-6 mb-5">
+        <!-- Card 1 -->
+        <div class="bg-yellow-50 rounded-lg shadow-lg p-6 w-80 text-center mb-5 sm:mb-0">
+            <h2 class="text-xl font-semibold px-6 mb-3">QUICK RESPONSE</h2>
+            <p class="text-yellow-500 mt-2 px-5">
+                Responding quickly and easily to the FOIA and Open Records requests that government, public safety, and education organizations are subject to.
+            </p>
+        </div>
+    
+        <!-- Card 2 -->
+        <div class="bg-yellow-50 rounded-lg shadow-lg p-6 w-80 text-center mb-5 sm:mb-0">
+            <h2 class="text-xl font-semibold px-6 mb-3">COST REDUCTION</h2>
+            <p class="text-green-700 mt-2 px-5">
+                Reducing the cost and complexity of eDiscovery by automatically gathering online evidence relevant to Legal Matters.
+            </p>
+        </div>
+    
+        <!-- Card 3 -->
+        <div class="bg-yellow-50 rounded-lg shadow-lg p-6 w-80 text-center mb-5 sm:mb-0">
+            <h2 class="text-xl font-semibold px-4 mb-3">EFFICIENT COMPLIANCE</h2>
+            <p class="text-red-700 mt-2 px-5">
+                Complying with recordkeeping requirements and simplifying audit requests in highly-regulated industries such as Banking, Financial Services, Healthcare, Education, etc.
+            </p>
+        </div>
+    </div>
+    
+
+    </div>
+    <footer class="bg-gray-800 text-white">
+        <div class="footer-container container mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-start md:items-center">
+            <!-- Footer Logo -->
+            <div class="footer-logo mb-3 md:mb-0">
+                <div class="flex flex-col  items-center md:items-start space-y-4 md:space-y-0 md:flex-row md:space-x-6">
+                
+                    <img src="https://i.postimg.cc/QCf7GYps/logo-4k.png" alt="Detectron" class="w-28 h-28 md:w-36 md:h-32 lg:w-48 lg:h-40 image-opacity">
+                </div>
+            </div>
+            <!-- Footer Links -->
+            <div class="footer-links mb-8 md:mb-0">
+                <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-gray-400">Home</a></li>
+                    <li><a href="#" class="hover:text-gray-400">Blog</a></li>
+                    <li><a href="#" class="hover:text-gray-400">List Layout</a></li>
+                    <li><a href="#" class="hover:text-gray-400">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Footer Contact -->
+            <div class="footer-contact mb-8 md:mb-0">
+                <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                <p class="flex items-center mb-2"><i class="fa fa-map-marker mr-2"></i> 3015 Grand Ave, Coconut Grove, Merrick Way, FL 12345</p>
+                <p class="flex items-center mb-2"><i class="fa fa-phone mr-2"></i> +123-456-789</p>
+                <p class="flex items-center"><i class="fa fa-envelope mr-2"></i> sales@example.com</p>
+            </div>
+            <!-- Footer Newsletter -->
+            <div class="footer-newsletter">
+                <h3 class="text-lg font-semibold mb-4">Remain Updated</h3>
+                <input type="email" placeholder="Your email address" class="p-2 rounded bg-gray-700 text-white mb-2 w-full md:w-auto">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Sign up</button>
+            </div>
+        </div>
+        <!-- Footer Bottom -->
+        <div class="footer-bottom bg-gray-900 p-4">
+            <div class="social-icons flex justify-center md:justify-evenly space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-youtube"></i></a>
+            </div>
+          
+        </div>
+        <p class="text-center text-sm mt-4">&copy; 2023. All rights reserved. Designed by Inspiry Themes</p>
+    </footer>
+    
+    </body>
+    </head>
+    </html>
